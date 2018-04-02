@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>Testing vueJS2.0 !</h1>
     <router-view/>
   </div>
 
