@@ -11,18 +11,24 @@
                 <div class="w-100"></div>
                 <p>{{point1.text}}</p>
                 <div class="w-100"></div>
-                <p>{{point2.title}}</p>
-                <div class="w-100"></div>
-                <p>{{point2.text}}</p>
-                <div class="w-100"></div>
-                <p>{{point3.title}}</p>
-                <div class="w-100"></div>
-                <p>{{point3.text}}</p>
-                <div class="w-100"></div>
-                <p>{{point4.title}}</p>
-                <div class="w-100"></div>
-                <p>{{point4.text}}</p>
-                <div class="w-100"></div>
+                <div v-if='point2'>
+                  <p>{{point2.title}}</p>
+                  <div class="w-100"></div>
+                  <p>{{point2.text}}</p>
+                  <div class="w-100"></div>
+                </div>
+                <div v-if='point3'>
+                  <p>{{point3.title}}</p>
+                  <div class="w-100"></div>
+                  <p>{{point3.text}}</p>
+                  <div class="w-100"></div>
+                </div>
+                <div v-if='point3'>
+                  <p>{{point4.title}}</p>
+                  <div class="w-100"></div>
+                  <p>{{point4.text}}</p>
+                  <div class="w-100"></div>
+                </div>
               </b-col>
             </b-row>
         </div>
