@@ -62,7 +62,7 @@ export default {
     .ficheTechnique{
         background-color: beige;
         border: black 1px solid;
-        border-radius: 7%; 
+        border-radius: 6%; 
         margin-left: 10px;
         margin-top: 10px;
     }
