@@ -1,35 +1,30 @@
 <template>
-    <b-container>
+    <b-container fluid>
         <div>
             <b-row>
-                <b-col cols="4" class="ficheTechnique">{{titre}}</b-col>
-            </b-row>
-            <b-row>
-                <b-col cols="4" class="ficheTechnique">{{soustitre}}</b-col>
-            </b-row>
-            <b-row>
-                <b-col cols="4" class="ficheTechnique">{{point1.title}}</b-col>
-            </b-row>
-            <b-row>
-                <b-col cols="4" class="ficheTechnique">{{point1.text}}</b-col>
-            </b-row>
-            <b-row>
-                <b-col cols="4" class="ficheTechnique">{{point2.title}}</b-col>
-            </b-row>
-            <b-row>
-                <b-col cols="4" class="ficheTechnique">{{point2.text}}</b-col>
-            </b-row>
-            <b-row>
-                <b-col cols="4" class="ficheTechnique">{{point3.title}}</b-col>
-            </b-row>
-            <b-row>
-                <b-col cols="4" class="ficheTechnique">{{point3.text}}</b-col>
-            </b-row>
-            <b-row>
-                <b-col cols="4" class="ficheTechnique">{{point4.title}}</b-col>
-            </b-row>
-            <b-row>
-                <b-col cols="4" class="ficheTechnique">{{point4.text}}</b-col>
+              <b-col cols="4" class="ficheTechnique">
+                <h2>{{titre}}</h2>
+                <div class="w-100"></div>
+                <h2></h2>
+                <p>{{soustitre}}</p>
+                <div class="w-100"></div>
+                <p>{{point1.title}}</p>
+                <div class="w-100"></div>
+                <p>{{point1.text}}</p>
+                <div class="w-100"></div>
+                <p>{{point2.title}}</p>
+                <div class="w-100"></div>
+                <p>{{point2.text}}</p>
+                <div class="w-100"></div>
+                <p>{{point3.title}}</p>
+                <div class="w-100"></div>
+                <p>{{point3.text}}</p>
+                <div class="w-100"></div>
+                <p>{{point4.title}}</p>
+                <div class="w-100"></div>
+                <p>{{point4.text}}</p>
+                <div class="w-100"></div>
+              </b-col>
             </b-row>
         </div>
     </b-container>
@@ -67,5 +62,8 @@ export default {
 <style scoped>
     .ficheTechnique{
         background-color: beige;
+        border: black 1px solid;
+        margin-left: 10px;
+        margin-top: 10px;
     }
 </style>
