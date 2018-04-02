@@ -15,6 +15,8 @@ Vue.use(BootstrapVue)
 export default {
   name: 'app',
   data () {
+    return {
+    }
   }
 }
 </script>
