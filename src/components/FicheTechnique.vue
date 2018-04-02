@@ -5,7 +5,6 @@
               <b-col cols="4" class="ficheTechnique">
                 <h2>{{titre}}</h2>
                 <div class="w-100"></div>
-                <h2></h2>
                 <p>{{soustitre}}</p>
                 <div class="w-100"></div>
                 <p>{{point1.title}}</p>
@@ -63,6 +62,7 @@ export default {
     .ficheTechnique{
         background-color: beige;
         border: black 1px solid;
+        border-radius: 7%; 
         margin-left: 10px;
         margin-top: 10px;
     }
