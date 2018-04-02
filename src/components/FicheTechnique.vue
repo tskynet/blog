@@ -23,7 +23,7 @@
                   <p>{{point3.text}}</p>
                   <div class="w-100"></div>
                 </div>
-                <div v-if='point3'>
+                <div v-if='point4'>
                   <p>{{point4.title}}</p>
                   <div class="w-100"></div>
                   <p>{{point4.text}}</p>
