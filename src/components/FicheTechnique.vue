@@ -1,46 +1,48 @@
 <template>
-    <b-container fluid>
-        <div>
-            <b-row>
-              <b-col cols="4" class="ficheTechnique">
-                <h2>{{titre}}</h2>
-                <div class="w-100"></div>
-                <p>{{soustitre}}</p>
-                <div class="w-100"></div>
-                <p>{{point1.title}}</p>
-                <div class="w-100"></div>
-                <p>{{point1.text}}</p>
-                <div class="w-100"></div>
-                <div v-if='point2'>
-                  <p>{{point2.title}}</p>
+    <div id="ficheTechnique">
+      <b-container fluid>
+          <div>
+              <b-row>
+                <b-col cols="3" class="ficheTechnique">
+                  <h2>{{titre}}</h2>
                   <div class="w-100"></div>
-                  <p>{{point2.text}}</p>
+                  <p>{{soustitre}}</p>
                   <div class="w-100"></div>
-                </div>
-                <div v-if='point3'>
-                  <p>{{point3.title}}</p>
+                  <p>{{point1.title}}</p>
                   <div class="w-100"></div>
-                  <p>{{point3.text}}</p>
+                  <p>{{point1.text}}</p>
                   <div class="w-100"></div>
-                </div>
-                <div v-if='point3'>
-                  <p>{{point4.title}}</p>
-                  <div class="w-100"></div>
-                  <p>{{point4.text}}</p>
-                  <div class="w-100"></div>
-                </div>
-              </b-col>
-            </b-row>
-        </div>
-    </b-container>
+                  <div v-if='point2'>
+                    <p>{{point2.title}}</p>
+                    <div class="w-100"></div>
+                    <p>{{point2.text}}</p>
+                    <div class="w-100"></div>
+                  </div>
+                  <div v-if='point3'>
+                    <p>{{point3.title}}</p>
+                    <div class="w-100"></div>
+                    <p>{{point3.text}}</p>
+                    <div class="w-100"></div>
+                  </div>
+                  <div v-if='point3'>
+                    <p>{{point4.title}}</p>
+                    <div class="w-100"></div>
+                    <p>{{point4.text}}</p>
+                    <div class="w-100"></div>
+                  </div>
+                </b-col>
+              </b-row>
+          </div>
+      </b-container>
+    </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'FicheTechnique',
   data () {
     return {
-      titre: 'je suis un titre',
+      titre: 'En quelques mots :',
       soustitre: 'je suis un sous titre',
       point1: {
         title: 'Point n1',
@@ -65,11 +67,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .ficheTechnique{
-        background-color: beige;
-        border: black 1px solid;
-        border-radius: 6%; 
-        margin-left: 10px;
-        margin-top: 10px;
-    }
+#ficheTechnique .ficheTechnique{
+    background-color: #f4f3ef;
+    box-shadow : 0 2px 2px rgba(204, 197, 185, 0.5);
+    border-radius:10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#ficheTechnique .ficheTechnique h2{
+  font-size:22px;
+  font-style:italic;
+}
 </style>
