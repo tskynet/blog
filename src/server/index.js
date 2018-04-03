@@ -1,12 +1,19 @@
+// Import et config d'express
+
 var express = require('express');
 var hostname = 'localhost';
 var port = 3000;
+var app = express();
 
-
+// Import et config de mongoose
 var mongoose = require('mongoose');
 var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
 replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
+
+// Url de connection mongodb
 var urlmongo = '###';
+
+// Connection a la BDD
 mongoose.connect(urlmongo, options);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Erreur lors de la connexion')); 
@@ -14,12 +21,12 @@ db.once('open', function (){
     console.log("Connexion à la base OK"); 
 });
 
-
-var app = express();
+// Utilisation de body parser pour pouvoir parser les requetes http
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Schema de la BDD
 var ficheTechniqueSchema = mongoose.Schema({
     titre: String, 
     soustitre: String 
@@ -43,19 +50,23 @@ var ficheTechniqueSchema = mongoose.Schema({
 
 var ficheTechnique = mongoose.model('ficheTechnique', ficheTechniqueSchema);
 
+// Routeur de l'API
 var myRouter = express.Router();
+
+// Racine renvoyant un message de bienvenue peu importe la méthode utilisé
 myRouter.route('/')
 .all(function(req,res){
   res.json({message : 'Bienvenue sur l\'api'})
 });
 
+// API déstiné au fiche technique avec toute les methodes dont nous avons besoin (CRUD)
 myRouter.route('/fiche')
 .get(function(req,res){
-    ficheTechnique.finf(function(err, fiches){
+    ficheTechnique.find(function(err, fiches){
         if (err){
             res.send(err);
         }
-        res.json(piscines);
+        res.json(fiches);
     });
 })
 .post(function(req,res){
@@ -77,6 +88,8 @@ myRouter.route('/fiche')
         res.json({message: 'Stockée en bdd'});
     });
 });
+
+// Démarage du serveur
 app.use(myRouter);
 app.listen(port,hostname, function(){
     console.log("ready");
