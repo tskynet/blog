@@ -11,7 +11,7 @@ var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 
 replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
 
 // Url de connection mongodb
-var urlmongo = '###';
+var urlmongo = '';
 
 // Connection a la BDD
 mongoose.connect(urlmongo, options);
@@ -61,6 +61,7 @@ myRouter.route('/')
 
 // API déstiné au fiche technique avec toute les methodes dont nous avons besoin (CRUD)
 myRouter.route('/fiche')
+// Obtenir la liste de toutes les fiches
 .get(function(req,res){
     ficheTechnique.find(function(err, fiches){
         if (err){
@@ -69,6 +70,7 @@ myRouter.route('/fiche')
         res.json(fiches);
     });
 })
+// Ajouter une fiche
 .post(function(req,res){
     var fiche = new ficheTechnique();
     fiche.titre = req.body.titre;
@@ -86,6 +88,42 @@ myRouter.route('/fiche')
             res.send(err);
         }
         res.json({message: 'Stockée en bdd'});
+    });
+});
+
+myRouter.route('/fiche/:fiche_id')
+// Obtenir une fiche en particulier
+.get(function(req,res){
+    ficheTechnique.findById(req.params.fiche_id, function(err, fiche){
+        if (err){
+            res.send(err);
+        }
+            res.json(fiche);
+    });
+})
+// Modifier une fiche
+.put(function(req, res){
+    ficheTechnique.findById(req.params.fiche_id, function(err, fiche){
+        if (err){
+            res.send(err);
+        }
+        fiche.titre = req.body.titre;
+        fiche.soustitre = req.body.soustitre;
+        fiche.save(function(err){
+            if(err){
+                res.send(err);
+            }
+            res.json({message: 'Mis a jour'});
+        });
+    });
+})
+// Supprimer une fiche
+.delete(function(req,res){
+    ficheTechnique.remove({_id: req.params.fiche_id}, function(err, fiche){
+        if (err){
+            res.send(err);
+        }
+        res.json({message: "Supprimé"})
     });
 });
 
