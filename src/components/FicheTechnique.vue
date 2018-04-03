@@ -1,9 +1,7 @@
 <template>
     <div id="ficheTechnique">
       <b-container fluid>
-          <div>
-              <b-row>
-                <b-col cols="3" class="ficheTechnique">
+          <div class="ficheTechnique">
                   <h2>{{titre}}</h2>
                   <div class="w-100"></div>
                   <p>{{soustitre}}</p>
@@ -30,8 +28,6 @@
                     <p>{{point4.text}}</p>
                     <div class="w-100"></div>
                   </div>
-                </b-col>
-              </b-row>
           </div>
       </b-container>
     </div>
@@ -67,6 +63,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.ficheTechnique{
+  max-height: 460px;
+  max-width: 300px;
+}
 #ficheTechnique .ficheTechnique{
     background-color: #f4f3ef;
     box-shadow : 0 2px 2px rgba(204, 197, 185, 0.5);
