@@ -64,19 +64,23 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-.ficheTechnique{
-  font-family: 'Roboto', sans-serif;
-  min-height: 460px;
-  min-width: 300px;
-  max-height: 460px;
-  max-width: 300px;
+#ficheTechnique{
+
 }
 #ficheTechnique .ficheTechnique{
-    background-color: #f4f3ef;
     box-shadow : 0 2px 2px rgba(204, 197, 185, 0.5);
     border-radius:10px;
     margin-left: 10px;
     margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    min-height: 460px;
+    min-width: 300px;
+    max-height: 460px;
+    max-width: 300px;
+    background:#f2f2f2;
+    display:inline-block;
+    padding:10px;
+    border:5px solid rgba(148,148,148,0.3);
 }
 #ficheTechnique .ficheTechnique h2{
   font-size:22px;
@@ -86,5 +90,6 @@ export default {
 }
 #ficheTechnique .ficheTechnique p{
   margin-bottom: 8px;
+  font-size:14px;
 }
 </style>
