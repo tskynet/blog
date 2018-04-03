@@ -42,7 +42,7 @@ export default {
       soustitre: 'je suis un sous titre',
       point1: {
         title: 'Point n1',
-        text: 'Bonjour je suis le descriptif du point n1'
+        text: 'Bonjour je suis le descriptif du point n1 et je suis vraiment tres grand'
       },
       point2: {
         title: 'Point n2',
@@ -63,7 +63,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 .ficheTechnique{
+  font-family: 'Roboto', sans-serif;
+  min-height: 460px;
+  min-width: 300px;
   max-height: 460px;
   max-width: 300px;
 }
@@ -77,5 +81,10 @@ export default {
 #ficheTechnique .ficheTechnique h2{
   font-size:22px;
   font-style:italic;
+  margin-bottom: 2px;
+  text-align: center;
+}
+#ficheTechnique .ficheTechnique p{
+  margin-bottom: 8px;
 }
 </style>
