@@ -4,17 +4,11 @@ var express = require('express');
 var hostname = 'localhost';
 var port = 3000;
 var app = express();
-
-// Import et config de mongoose
 var mongoose = require('mongoose');
-var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
-replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
-
-// Url de connection mongodb
-var urlmongo = '';
+var bdd = require('./bdd.js')
 
 // Connection a la BDD
-mongoose.connect(urlmongo, options);
+mongoose.connect(bdd.urlmongo, bdd.options);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Erreur lors de la connexion')); 
 db.once('open', function (){
