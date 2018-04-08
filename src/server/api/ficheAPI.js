@@ -1,4 +1,5 @@
 var express = require('express');
+var app = express();
 var bdd = require('../bdd');
 // Routeur de l'API
 var myRouter = express.Router();
@@ -27,7 +28,6 @@ var ficheTechniqueSchema = bdd.mongoose.Schema({
 });
 
 var ficheTechnique = bdd.mongoose.model('ficheTechnique', ficheTechniqueSchema);
-
 // Racine renvoyant un message de bienvenue peu importe la méthode utilisé
 myRouter.route('/')
 .all(function(req,res){
