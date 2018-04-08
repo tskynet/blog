@@ -8,11 +8,8 @@ var myRouter = express.Router();
 // Schema de la BDD
 var ficheTechniqueSchema = bdd.mongoose.Schema({
     titre: String, 
-    soustitre: String 
-   // point1:{
-    //    titre: String,
-   //     text: String
-   // },
+    soustitre: String, 
+    point1: String
     //point2:{
     //    titre: String,
     //    text: String
@@ -50,7 +47,7 @@ myRouter.route('/fiche')
     var fiche = new ficheTechnique();
     fiche.titre = req.body.titre;
     fiche.soustitre = req.body.soustitre;
-   // fiche.point1.titre = req.body.point1.titre;
+    fiche.point1 = req.body.point1;
    // fiche.point1.text = req.body.point1.text;
    // fiche.point2.titre = req.body.point2.titre;
    // fiche.point2.text = req.body.point2.text;

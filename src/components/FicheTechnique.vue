@@ -42,7 +42,7 @@ export default {
       titre: '',
       soustitre: '',
       point1: {
-        title: 'Point n1',
+        title: '',
         text: 'Bonjour je suis le descriptif du point n1 et je suis vraiment tres grand'
       },
       point2: {
@@ -60,11 +60,13 @@ export default {
     }
   },
   created () {
-    axios.get('http://localhost:3000/fiche/5ac3a7c080c7f317cc8a8699')
+    axios.get('http://localhost:3000/fiche/5aca25dc720c1a0cf823ee3e')
       .then(response => {
         this.titre = response.data.titre
         this.soustitre = response.data.soustitre
-        console.log(response.data)
+        var point1 = JSON.parse(response.data.point1)
+        this.point1.title = point1.title
+        this.point1.text = point1.text
       })
       .catch(e => {
         console.log('erooor' + e)
