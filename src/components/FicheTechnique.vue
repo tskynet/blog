@@ -34,12 +34,13 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'FicheTechnique',
   data () {
     return {
-      titre: 'En quelques mots :',
-      soustitre: 'je suis un sous titre',
+      titre: '',
+      soustitre: '',
       point1: {
         title: 'Point n1',
         text: 'Bonjour je suis le descriptif du point n1 et je suis vraiment tres grand'
@@ -57,6 +58,17 @@ export default {
         text: 'Bonjour je suis le descriptif du point n4'
       }
     }
+  },
+  created () {
+    axios.get('http://localhost:3000/fiche/5ac3a7c080c7f317cc8a8699')
+      .then(response => {
+        this.titre = response.data.titre
+        this.soustitre = response.data.soustitre
+        console.log(response.data)
+      })
+      .catch(e => {
+        console.log('erooor' + e)
+      })
   }
 }
 </script>
@@ -64,9 +76,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-#ficheTechnique{
 
-}
 #ficheTechnique .ficheTechnique{
     box-shadow : 0 2px 2px rgba(204, 197, 185, 0.5);
     border-radius:10px;
