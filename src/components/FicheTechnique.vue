@@ -43,7 +43,7 @@ export default {
       soustitre: '',
       point1: {
         title: '',
-        text: 'Bonjour je suis le descriptif du point n1 et je suis vraiment tres grand'
+        text: ''
       },
       point2: {
         title: 'Point n2',
