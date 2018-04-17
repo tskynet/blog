@@ -23,6 +23,13 @@ npm run unit
 # run e2e tests
 npm run e2e
 
+# templates on wireframe.cc
+Template article desktop => https://wireframe.cc/pro/pp/593733795158957
+Template article mobile => https://wireframe.cc/pro/pp/5211e6a14158956
+Template article mobile menu open => https://wireframe.cc/pro/pp/6ba4f4f4e158960
+Template register desktop => https://wireframe.cc/pro/pp/60a89173b158980
+Template register mobile => https://wireframe.cc/pro/pp/881b1877b158981
+
 # run all tests
 npm test
 ```
