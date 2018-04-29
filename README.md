@@ -30,8 +30,11 @@ Template article mobile menu open => https://wireframe.cc/pro/pp/6ba4f4f4e158960
 Template register desktop => https://wireframe.cc/pro/pp/60a89173b158980
 Template register mobile => https://wireframe.cc/pro/pp/881b1877b158981
 Template accueil desktop => https://wireframe.cc/maSuo9
+Template accueil mobile => https://wireframe.cc/uGuzkc
 Template tri d'article desktop => https://wireframe.cc/TGwpHB
 Template FAQ desktop => https://wireframe.cc/Ugaq5B
+Template FAQ mobile => https://wireframe.cc/zjj3M0
+Template connexion mobile => https://wireframe.cc/Rp6uWM
 
 # run all tests
 npm test
